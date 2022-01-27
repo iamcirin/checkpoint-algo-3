@@ -1,0 +1,29 @@
+PROCEDURE scalar_product(v1, v2 : ARRAY_OF INTEGER)
+VAR
+    i : INTEGER
+    ps: INTEGER := 0
+BEGIN
+    FOR i FROM 0 TO v1.length - 1 STEP 1  DO
+        ps : = ps + v1[i] * v2[i]
+    END_FOR
+END
+
+ALGORITHM are_orthogonal
+VAR
+    i, j : INTEGER
+    arr : ARRAY_OF arrays
+    v1 , v2 : ARRAY_OF INTEGER
+BEGIN
+    FOR i FROM 0 TO arr.length-2 DO
+        FOR i FROM i+1 TO arr.length-1 DO
+        ps:=0;
+        v1:=arr[i];
+        v2:=arr[j];
+        dot_product(v1,v2,ps)
+            IF (ps=0) THEN
+                write('The vectors ',v1,' and ',v2,' are orthogonal')
+            ELSE write('The two vectors',v1,' and  ',v2,' aren\'t orthogonal')
+            END_IF
+        END_FOR
+    END_FOR
+END
